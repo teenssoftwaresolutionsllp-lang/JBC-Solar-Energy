@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="26" y1="16" x2="373" y2="494" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8E3F4"/>
+      <stop offset="1" stop-color="#B8B8DB"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="91" y1="363" x2="300" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#294B67"/>
+      <stop offset="1" stop-color="#172D46"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="157" y1="172" x2="251" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0C39B"/>
+      <stop offset="1" stop-color="#C98965"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h400v500H0z"/>
+  <path d="M0 111c58 25 91 23 141 2 68-29 152-37 259 7v380H0V111Z" fill="#D0CDE5" opacity=".55"/>
+  <circle cx="72" cy="94" r="36" fill="#FFF4D3" opacity=".72"/>
+  <path d="M74 500c13-90 56-136 126-136s113 46 126 136H74Z" fill="url(#jacket)"/>
+  <path d="m165 367 35 55 36-55-4-43h-64l-3 43Z" fill="#C98965"/>
+  <path d="m158 384 42 58 43-58 30 17-48 99h-50l-48-99 31-17Z" fill="#F7F6F3"/>
+  <path d="M122 218c0-70 32-111 80-111 52 0 79 41 79 111v38c0 68-34 107-80 107s-79-39-79-107v-38Z" fill="url(#skin)"/>
+  <path d="M117 232c-13-66 3-122 51-144 39-18 94-10 119 27 16 23 17 51 8 87-11-18-21-31-41-41-30 9-78 11-132 2l-5 69Z" fill="#40312B"/>
+  <path d="M124 239c-20-11-30 5-24 28 5 18 15 29 28 28l-4-56Zm155 0c19-11 29 5 23 28-5 18-15 29-28 28l5-56Z" fill="#D39A76"/>
+  <path d="M151 248c10-6 22-6 32 0m43 0c10-6 22-6 32 0" stroke="#67473B" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="168" cy="263" rx="5.5" ry="7.5" fill="#30343A"/>
+  <ellipse cx="245" cy="263" rx="5.5" ry="7.5" fill="#30343A"/>
+  <path d="M207 268c-2 17-6 28-12 34 7 6 15 7 23 2" stroke="#AF7458" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M177 318c17 13 39 13 57 0" stroke="#9A564E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M142 209c9-22 26-34 48-39m43 2c14 5 25 15 33 32" stroke="#4A3931" stroke-width="5" stroke-linecap="round"/>
+</svg>

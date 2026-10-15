@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --primary-orange: #f36a26;
+  --primary-orange-hover: #e05514;
+  --primary-blue: #0070ba;
+  --primary-blue-hover: #005c9a;
+  --accent-green-bg: #eaf5ed;
+  --accent-green-badge: #d4edda;
+  --accent-green-text: #198754;
+  --dark-espresso: #1e130c;
+  --dark-text: #111827;
+  --muted-text: #596579;
+  --border-light: #e5e7eb;
+  --card-bg-light: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  background-color: #ffffff;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for pixel-matching the design */
+.bg-jbc-orange {
+  background-color: #f36a26;
+}
+.bg-jbc-orange:hover {
+  background-color: #e05514;
+}
+.text-jbc-orange {
+  color: #f36a26;
+}
+.border-jbc-orange {
+  border-color: #f36a26;
+}
+
+.bg-jbc-blue {
+  background-color: #0070ba;
+}
+.text-jbc-blue {
+  color: #0070ba;
+}
+
+.bg-jbc-footer {
+  background-color: #1e130c;
+}
+
+.bg-jbc-card-mint {
+  background-color: #eaf4ed;
+}
+
+.badge-green-pill {
+  background-color: #d8f3dc;
+  color: #1b4332;
+}
