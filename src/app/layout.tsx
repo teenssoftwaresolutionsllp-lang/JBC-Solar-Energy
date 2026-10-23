@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { NavigationLoader } from "@/components/layout/NavigationLoader";
+import { PublicSiteWrapper } from "@/components/layout/PublicSiteWrapper";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -47,10 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakartaSans.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col font-sans bg-white text-slate-800 antialiased selection:bg-[#f36a26]/20 selection:text-[#f36a26]">
-        <Header />
-        <NavigationLoader />
-        <main className="flex-1 w-full">{children}</main>
-        <Footer />
+        <PublicSiteWrapper>{children}</PublicSiteWrapper>
       </body>
     </html>
   );

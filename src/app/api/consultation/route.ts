@@ -3,6 +3,7 @@ import { consultationFormSchema } from "@/lib/validations";
 import { getDb } from "@/db";
 import { consultationRequests } from "@/db/schema";
 import { siteConfig } from "@/data/site";
+import { addLead } from "@/lib/admin-store";
 
 export async function POST(request: Request) {
   try {
@@ -21,45 +22,48 @@ export async function POST(request: Request) {
     }
 
     const data = parseResult.data;
-    const db = getDb();
 
+    // Save into persistent admin store so it immediately displays on the Admin Dashboard
+    const savedLead = addLead({
+      fullName: data.fullName,
+      phone: data.phone,
+      email: data.email,
+      location: data.location,
+      propertyType: data.propertyType,
+      interestedIn: data.interestedIn,
+      averageElectricityBill: data.averageElectricityBill,
+      message: data.message,
+      status: "pending",
+    });
+
+    // Also attempt Drizzle/Postgres write if database connection is available
+    const db = getDb();
     if (db) {
       try {
-        const [inserted] = await db
-          .insert(consultationRequests)
-          .values({
-            fullName: data.fullName,
-            phone: data.phone,
-            email: data.email,
-            location: data.location,
-            propertyType: data.propertyType,
-            interestedIn: data.interestedIn,
-            averageElectricityBill: data.averageElectricityBill,
-            message: data.message,
-          })
-          .returning();
-
-        return NextResponse.json({
-          success: true,
-          message: "Your consultation request has been submitted successfully! A solar specialist will contact you within one business day.",
-          data: inserted,
+        await db.insert(consultationRequests).values({
+          id: savedLead.id,
+          fullName: data.fullName,
+          phone: data.phone,
+          email: data.email,
+          location: data.location,
+          propertyType: data.propertyType,
+          interestedIn: data.interestedIn,
+          averageElectricityBill: data.averageElectricityBill,
+          message: data.message,
+          status: "pending",
         });
       } catch (dbErr) {
-        console.error("Database insert error:", dbErr);
-        // If DB is temporarily unavailable or credentials pending, return successful acknowledgement with note
-        return NextResponse.json({
-          success: true,
-          message: "Your consultation request has been received. Our team will contact you shortly.",
-        });
+        console.warn("Postgres insert skipped/failed, admin-store persisted:", dbErr);
       }
-    } else {
-      // Graceful fallback when DATABASE_URL is not yet configured
-      console.log("Mock submission received (DB not configured):", data);
-      return NextResponse.json({
-        success: true,
-        message: "Your consultation request has been received. Our team will contact you within one business day.",
-      });
     }
+
+
+    return NextResponse.json({
+      success: true,
+      message:
+        "Your consultation request has been submitted successfully! A solar specialist will contact you within one business day.",
+      data: savedLead,
+    });
   } catch (error) {
     console.error("Consultation submission error:", error);
     return NextResponse.json(

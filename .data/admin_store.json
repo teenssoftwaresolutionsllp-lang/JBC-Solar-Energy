@@ -1,0 +1,418 @@
+{
+  "users": [
+    {
+      "id": "usr-45eb258a-4d4e-44b6-ad78-9ce5a41b1993",
+      "name": "harish",
+      "email": "harish@gmail.com",
+      "passwordHash": "eb5e8635ce51e9dfbffe4f4b20c69dbc:b54e180f797451a3d58fed479003fdca3c5a454d753b262fb324e4b96d0201c693f6db939765afbd57695f30628a513b884d9b81c92317d27d4e9897ea01f362",
+      "role": "solar_consultant",
+      "permissions": [
+        "leads:read",
+        "leads:write",
+        "analytics:view"
+      ],
+      "status": "active",
+      "phone": "7777777777",
+      "avatar": "H",
+      "lastLogin": null,
+      "createdAt": "2026-10-15T11:04:46.297Z",
+      "updatedAt": "2026-10-15T11:04:46.297Z"
+    },
+    {
+      "id": "usr-2d1a5ffb-df41-474c-9a2d-e899d2e062f8",
+      "name": "Vikram Malhotra",
+      "email": "vikram.m_1792059405394@jbcsolar.com",
+      "passwordHash": "5a12e746e79f42d7b0dc72bd11db786a:079ed53fc2429001b6229e9a265fda6291f6a45fcceff279d7d6b1e0108cde295e6af685d3a721e43c8e4617ae45e4dab79fd0f23ce67e7cdca7ffd4da994618",
+      "role": "solar_consultant",
+      "permissions": [
+        "leads:read",
+        "leads:write",
+        "analytics:view"
+      ],
+      "status": "active",
+      "phone": "+91 9876501234",
+      "avatar": "VM",
+      "lastLogin": null,
+      "createdAt": "2026-10-15T10:16:45.974Z",
+      "updatedAt": "2026-10-15T10:16:45.974Z"
+    },
+    {
+      "id": "usr-super-admin-1",
+      "name": "Admin User",
+      "email": "admin@jbcsolar.com",
+      "passwordHash": "48ae7934dd8cc8ab1c3e351a7178d54c:22852e94df0a10589f170f59a881b526b819adbf6e5f29f6593186748267dddf6aa20a2266c3640eb6bc08376c65f366022256d96e2abf1cdef17a7b4f3d05b2",
+      "role": "super_admin",
+      "permissions": [
+        "*"
+      ],
+      "status": "active",
+      "phone": "+91 9100024222",
+      "avatar": "AU",
+      "lastLogin": "2026-10-21T10:18:45.571Z",
+      "createdAt": "2026-09-15T10:16:43.583Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "usr-subadmin-ops-2",
+      "name": "Rajiv Sharma",
+      "email": "rajiv.s@jbcsolar.com",
+      "passwordHash": "44466d32935c8ff39910676f80fbe371:dfd66604e0db9b7ccdad05b2da12cc2c45e3bd0110c445d535530fcef4b1edadc2fcae6d3cf05059949a83f239453bb1210b786463de5a32861658d1e3f91605",
+      "role": "operations",
+      "permissions": [
+        "leads:read",
+        "leads:write",
+        "projects:manage",
+        "analytics:view"
+      ],
+      "status": "active",
+      "phone": "+91 9849012345",
+      "avatar": "RS",
+      "lastLogin": "2026-10-15T08:16:43.702Z",
+      "createdAt": "2026-09-30T10:16:43.702Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "usr-subadmin-consultant-3",
+      "name": "Priya Patel",
+      "email": "priya.p@jbcsolar.com",
+      "passwordHash": "61ce2b6d522aefbd015fac5211198b31:0989032cdf79ae6bfbbadd2b777f81693749979f2719c4dae6b71671361af62016c982b72b740bce63019070dac7b4060a931b0f8eb793b200e678b8f3d2e90e",
+      "role": "solar_consultant",
+      "permissions": [
+        "leads:read",
+        "leads:write",
+        "analytics:view"
+      ],
+      "status": "active",
+      "phone": "+91 9876543210",
+      "avatar": "PP",
+      "lastLogin": "2026-10-15T05:16:43.843Z",
+      "createdAt": "2026-10-05T10:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead-mvj1ou41-tr0k",
+      "fullName": "harish",
+      "phone": "7032778420",
+      "email": "abc@gmail.com",
+      "location": "kadapa",
+      "propertyType": "Commercial",
+      "interestedIn": "Solar EPC",
+      "averageElectricityBill": "Below ₹5,000",
+      "message": "zxcvbkl;",
+      "status": "pending",
+      "estimatedKw": null,
+      "createdAt": "2026-10-22T04:32:38.257Z",
+      "updatedAt": "2026-10-22T04:32:38.257Z"
+    },
+    {
+      "id": "lead-mv9dwfvy-kl06",
+      "fullName": "Ananya Deshmukh",
+      "phone": "+91 9820012345",
+      "email": "ananya.d@gmail.com",
+      "location": "Banjara Hills, Hyderabad",
+      "propertyType": "Residential",
+      "interestedIn": "Rooftop Solar Installation",
+      "averageElectricityBill": "₹8,500 / month",
+      "message": "Looking for an 8 kW solar rooftop system for private villa.",
+      "status": "contacted",
+      "estimatedKw": "8 kW",
+      "createdAt": "2026-10-15T10:16:46.702Z",
+      "updatedAt": "2026-10-15T10:16:49.355Z",
+      "adminNotes": "Spoke with client. Site survey scheduled for Monday 11 AM."
+    },
+    {
+      "id": "lead-001",
+      "fullName": "Rameshwar Rao",
+      "phone": "+91 9440123456",
+      "email": "rameshwar.rao@gmail.com",
+      "location": "Hyderabad, Telangana",
+      "propertyType": "Residential",
+      "interestedIn": "Rooftop Solar with Net Metering",
+      "averageElectricityBill": "₹6,500 / month",
+      "message": "Interested in installing a 7 kW grid-tied solar system for our 3-floor villa to cut summer AC bills.",
+      "status": "pending",
+      "assignedTo": "usr-subadmin-consultant-3",
+      "assignedAdminName": "Priya Patel",
+      "adminNotes": "Client requested site survey on Saturday morning.",
+      "estimatedKw": "7 kW",
+      "createdAt": "2026-10-15T09:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "lead-002",
+      "fullName": "Modern Agro Cold Storage (Anand Patel)",
+      "phone": "+91 9829011223",
+      "email": "anand@moderncoldstorage.in",
+      "location": "Jalor, Rajasthan",
+      "propertyType": "Commercial",
+      "interestedIn": "Commercial Solar Rooftop System",
+      "averageElectricityBill": "₹65,000 / month",
+      "message": "We have 15,000 sq ft industrial shed roof. Seeking 100kW rooftop installation to lower peak daytime refrigeration costs.",
+      "status": "contacted",
+      "assignedTo": "usr-subadmin-ops-2",
+      "assignedAdminName": "Rajiv Sharma",
+      "adminNotes": "Contacted director. Feasibility report and ROI calculation sent via email.",
+      "estimatedKw": "100 kW",
+      "createdAt": "2026-10-14T20:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "lead-003",
+      "fullName": "Sterling Polymers Pvt Ltd",
+      "phone": "+91 9848099887",
+      "email": "procurement@sterlingpolymers.com",
+      "location": "Secunderabad, Telangana",
+      "propertyType": "Industrial",
+      "interestedIn": "Industrial Microgrid & Solar",
+      "averageElectricityBill": "₹1,80,000 / month",
+      "message": "Looking for 250 kW high-voltage captive solar plant. Require complete EPC turnkey delivery with DISCOM net metering sanction.",
+      "status": "quoted",
+      "assignedTo": "usr-super-admin-1",
+      "assignedAdminName": "Admin User",
+      "adminNotes": "Formal ₹1.15 Cr proposal submitted. DISCOM load sanction letter received.",
+      "estimatedKw": "250 kW",
+      "createdAt": "2026-10-13T10:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "lead-004",
+      "fullName": "Kishan Choudhary",
+      "phone": "+91 9784055667",
+      "email": "kishan.choudhary@farmenergy.com",
+      "location": "Bhinmal, Rajasthan",
+      "propertyType": "Agricultural",
+      "interestedIn": "Solar Water Pumping System",
+      "averageElectricityBill": "₹9,500 / month",
+      "message": "Need 10 HP solar submersible water pump under PM-KUSUM subsidy scheme for farm irrigation.",
+      "status": "scheduled",
+      "assignedTo": "usr-subadmin-consultant-3",
+      "assignedAdminName": "Priya Patel",
+      "adminNotes": "Field survey scheduled for October 18th.",
+      "estimatedKw": "10 HP",
+      "createdAt": "2026-10-12T10:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "lead-005",
+      "fullName": "Cyber Towers Facility Mgmt",
+      "phone": "+91 9121044332",
+      "email": "admin@cybertowers-hyd.org",
+      "location": "HITEC City, Hyderabad",
+      "propertyType": "Commercial",
+      "interestedIn": "Solar Carport & Rooftop",
+      "averageElectricityBill": "₹3,40,000 / month",
+      "message": "Phase 1: 500 kW installation completed and commissioned with smart IoT generation telemetry.",
+      "status": "installed",
+      "assignedTo": "usr-subadmin-ops-2",
+      "assignedAdminName": "Rajiv Sharma",
+      "adminNotes": "Commissioning certificate signed. 25-year performance warranty active.",
+      "estimatedKw": "500 kW",
+      "createdAt": "2026-10-03T10:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    },
+    {
+      "id": "lead-006",
+      "fullName": "Dr. Vikram Seth",
+      "phone": "+91 9988776655",
+      "email": "vikram.seth@apollohealth.org",
+      "location": "Banjara Hills, Hyderabad",
+      "propertyType": "Residential",
+      "interestedIn": "Hybrid Solar with Battery Backup",
+      "averageElectricityBill": "₹14,000 / month",
+      "message": "Need 12 kW solar with 15 kWh lithium battery backup for critical medical refrigeration equipment at private clinic.",
+      "status": "pending",
+      "assignedTo": "usr-subadmin-consultant-3",
+      "assignedAdminName": "Priya Patel",
+      "adminNotes": "New inquiry from website consultation form.",
+      "estimatedKw": "12 kW",
+      "createdAt": "2026-10-15T06:16:43.843Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "lonestar-advanced-manufacturing",
+      "title": "1.8MW Industrial Microgrid & Solar Farm",
+      "category": "Industrial",
+      "capacity": "1.8 MW",
+      "location": "San Antonio, TX",
+      "client": "Commercial Client",
+      "completionYear": "2024",
+      "status": "Completed",
+      "image": "/images/image 17.png",
+      "description": "High-voltage interconnected manufacturing solar microgrid providing continuous peak shaving and operational resilience.",
+      "impact": "Saves $240,000 annually in demand charges",
+      "createdAt": "2026-09-24T15:46:43.844Z"
+    },
+    {
+      "id": "oak-ridge-commercial-plaza",
+      "title": "Corporate Campus Carport & Solar Canopy",
+      "category": "Commercial",
+      "capacity": "350 kW",
+      "location": "Round Rock, TX",
+      "client": "Commercial Client",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 8.png",
+      "description": "Dual-purpose solar carport covering 180 parking bays with 12 integrated Level 2 EV charging stations.",
+      "impact": "Powers 65% of campus HVAC and office computing",
+      "createdAt": "2026-09-17T15:46:43.844Z"
+    },
+    {
+      "id": "travis-county-agri-solar",
+      "title": "Dual-Use Agricultural Solar Installation",
+      "category": "Industrial",
+      "capacity": "850 kW",
+      "location": "Del Valle, TX",
+      "client": "Commercial Client",
+      "completionYear": "2024",
+      "status": "Completed",
+      "image": "/images/image 9.png",
+      "description": "Elevated racking structure enabling grazing and shade-tolerant crop farming underneath solar arrays.",
+      "impact": "Dual revenue stream with clean irrigation power",
+      "createdAt": "2026-09-10T15:46:43.844Z"
+    },
+    {
+      "id": "sol-vista-subdivision",
+      "title": "Eco-District 24-Home Community Solar Array",
+      "category": "Residential",
+      "capacity": "192 kW Total",
+      "location": "Dripping Springs, TX",
+      "client": "Private Homeowner",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 11.png",
+      "description": "Turnkey residential rooftop deployment for a master-planned net-zero neighborhood.",
+      "impact": "Clean energy for 24 high-efficiency family homes",
+      "createdAt": "2026-09-03T15:46:43.844Z"
+    },
+    {
+      "id": "horizon-logistics",
+      "title": "500kW Rooftop Array for Horizon Logistics Centerr",
+      "category": "Residential",
+      "capacity": "500 kW",
+      "location": "Austin, TX",
+      "client": "Commercial Client",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 7.png",
+      "description": "Make the most of your available roof space with a professionally designed solar system.",
+      "impact": "Eliminates 460 metric tons of CO2 annually",
+      "createdAt": "2026-10-08T15:46:43.844Z"
+    },
+    {
+      "id": "austin-hills-residence",
+      "title": "Hill Country Net-Zero Residential Sanctuary",
+      "category": "Residential",
+      "capacity": "14.8 kW + 20kWh Battery",
+      "location": "Westlake Hills, TX",
+      "client": "Private Homeowner",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 6.png",
+      "description": "Architecturally integrated all-black monocrystalline system with full whole-home backup battery bank.",
+      "impact": "100% grid independence with net metering surplus",
+      "createdAt": "2026-10-01T15:46:43.844Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-75b8f668-6060-4b62-9558-535699eb6bf2",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-21T10:18:45.576Z"
+    },
+    {
+      "id": "log-12104e69-c23f-4132-ac5a-54ff1963ce7d",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-10-21T10:17:43.059Z"
+    },
+    {
+      "id": "log-9bddaca0-28a1-41e9-9030-6d8831eceb4f",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for harish (harish@gmail.com) with role: solar_consultant.",
+      "createdAt": "2026-10-15T11:04:46.297Z"
+    },
+    {
+      "id": "log-f36687a1-eb0b-41c0-8456-b851cac813b0",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-15T11:01:36.680Z"
+    },
+    {
+      "id": "log-9675aac4-1317-46b4-a750-386ed8eca1c7",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-10-15T10:16:49.918Z"
+    },
+    {
+      "id": "log-c75399e3-5190-4eb1-917b-3e42084ecec8",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Ananya Deshmukh updated from 'pending' to 'contacted'.",
+      "createdAt": "2026-10-15T10:16:49.355Z"
+    },
+    {
+      "id": "log-9ed3dd94-e540-47b9-a664-54ed7df33d71",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for Vikram Malhotra (vikram.m_1792059405394@jbcsolar.com) with role: solar_consultant.",
+      "createdAt": "2026-10-15T10:16:45.974Z"
+    },
+    {
+      "id": "log-1180ce2b-92c1-48f4-9daa-53230d3a7af1",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-15T10:16:44.157Z"
+    },
+    {
+      "id": "log-001",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "SYSTEM_INITIALIZED",
+      "details": "JBC Solar Admin Suite initialized with enterprise role-based security.",
+      "createdAt": "2026-09-15T10:16:43.844Z"
+    },
+    {
+      "id": "log-002",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for Rajiv Sharma with Operations role.",
+      "createdAt": "2026-09-30T10:16:43.844Z"
+    },
+    {
+      "id": "log-003",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for Priya Patel with Solar Consultant role.",
+      "createdAt": "2026-10-05T10:16:43.844Z"
+    },
+    {
+      "id": "log-004",
+      "adminId": "usr-subadmin-ops-2",
+      "adminName": "Rajiv Sharma",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Updated inquiry from Modern Agro Cold Storage to 'Contacted'.",
+      "createdAt": "2026-10-14T22:16:43.844Z"
+    }
+  ]
+}

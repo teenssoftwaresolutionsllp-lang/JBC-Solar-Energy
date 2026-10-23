@@ -1,21 +1,49 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { projectsData, ProjectItem } from "@/data/projects";
 import { Zap, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { SolarProjectRecord } from "@/lib/admin-types";
+import { projectsData } from "@/data/projects";
 
-export function ProjectsGallery() {
+interface ProjectsGalleryProps {
+  initialProjects?: SolarProjectRecord[];
+}
+
+export function ProjectsGallery({ initialProjects }: ProjectsGalleryProps) {
+  const [projects, setProjects] = useState<SolarProjectRecord[]>(
+    initialProjects && initialProjects.length > 0
+      ? initialProjects
+      : (projectsData as unknown as SolarProjectRecord[])
+  );
   const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  useEffect(() => {
+    if (initialProjects && initialProjects.length > 0) {
+      setProjects(initialProjects);
+    }
+  }, [initialProjects]);
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.projects) && data.projects.length > 0) {
+          setProjects(data.projects);
+        }
+      })
+      .catch((err) => console.error("Error fetching live projects:", err));
+  }, []);
 
   const categories = ["All", "Residential", "Commercial", "Industrial"];
 
   const filteredProjects =
     activeCategory === "All"
-      ? projectsData
-      : projectsData.filter((p) => p.category === activeCategory);
+      ? projects
+      : projects.filter(
+          (p) => p.category?.toLowerCase() === activeCategory.toLowerCase()
+        );
 
   return (
     <div className="w-full">
@@ -47,7 +75,7 @@ export function ProjectsGallery() {
             {/* Project Image */}
             <div className="relative h-64 w-full overflow-hidden bg-slate-900">
               <Image
-                src={project.image}
+                src={project.image || "/images/image 7.png"}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -80,10 +108,12 @@ export function ProjectsGallery() {
                   {project.description}
                 </p>
 
-                <div className="p-3 rounded-xl bg-[#eaf5ed] border border-[#d2ecd7] flex items-center gap-2 text-xs font-semibold text-[#16a34a] mb-6">
-                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                  <span>{project.impact}</span>
-                </div>
+                {project.impact && (
+                  <div className="p-3 rounded-xl bg-[#eaf5ed] border border-[#d2ecd7] flex items-center gap-2 text-xs font-semibold text-[#16a34a] mb-6">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                    <span>{project.impact}</span>
+                  </div>
+                )}
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
@@ -102,3 +132,4 @@ export function ProjectsGallery() {
     </div>
   );
 }
+
