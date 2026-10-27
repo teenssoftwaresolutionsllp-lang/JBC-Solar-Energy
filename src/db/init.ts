@@ -104,6 +104,39 @@ export async function ensureDbInitialized() {
       }
     }
 
+    // 3. Ensure all admin_users from admin_store.json are synced to DB
+    const userStoreFile = path.join(process.cwd(), ".data", "admin_store.json");
+    if (fs.existsSync(userStoreFile)) {
+      try {
+        const store = JSON.parse(fs.readFileSync(userStoreFile, "utf-8"));
+        if (Array.isArray(store.users)) {
+          for (const u of store.users) {
+            await sql`
+              INSERT INTO admin_users (
+                id, name, email, password_hash, role, permissions, status, phone, avatar, last_login, created_at, updated_at
+              ) VALUES (
+                ${u.id}, ${u.name}, ${u.email}, ${u.passwordHash}, ${u.role},
+                ${JSON.stringify(u.permissions || [])}, ${u.status || "active"}, ${u.phone || ""},
+                ${u.avatar || ""}, ${u.lastLogin ? new Date(u.lastLogin) : null},
+                ${new Date(u.createdAt || Date.now())}, ${new Date(u.updatedAt || Date.now())}
+              ) ON CONFLICT (id) DO UPDATE SET
+                name = EXCLUDED.name,
+                email = EXCLUDED.email,
+                role = EXCLUDED.role,
+                permissions = EXCLUDED.permissions,
+                status = EXCLUDED.status,
+                phone = EXCLUDED.phone,
+                avatar = EXCLUDED.avatar,
+                password_hash = EXCLUDED.password_hash,
+                updated_at = EXCLUDED.updated_at;
+            `;
+          }
+        }
+      } catch (userSyncErr) {
+        console.warn("Auto-sync admin_users error:", userSyncErr);
+      }
+    }
+
     initialized = true;
   } catch (err) {
     console.error("ensureDbInitialized error:", err);

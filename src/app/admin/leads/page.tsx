@@ -186,6 +186,7 @@ export default function LeadsPage(props: PageProps) {
             <span>Export CSV</span>
           </button>
 
+          {/* Record New Lead button commented out
           <button
             onClick={() => setIsNewLeadModalOpen(true)}
             className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#f36a26] to-[#e05514] px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-orange-500/20 hover:brightness-110 active:scale-95 transition-all"
@@ -193,6 +194,7 @@ export default function LeadsPage(props: PageProps) {
             <PlusCircle className="h-4 w-4" />
             <span>Record New Lead</span>
           </button>
+          */}
         </div>
       </div>
 
@@ -415,11 +417,13 @@ export default function LeadsPage(props: PageProps) {
         onUpdated={fetchLeads}
       />
 
+      {/* Record New Lead modal commented out
       <NewLeadModal
         isOpen={isNewLeadModalOpen}
         onClose={() => setIsNewLeadModalOpen(false)}
         onSuccess={fetchLeads}
       />
+      */}
     </div>
   );
 }

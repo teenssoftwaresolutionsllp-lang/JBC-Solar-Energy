@@ -50,7 +50,7 @@ export async function PUT(
     }
 
     const body = await request.json();
-    const result = updateSubadmin(id, body, current.name);
+    const result = await updateSubadmin(id, body, current.name);
 
     if (!result.success) {
       return NextResponse.json({ success: false, message: result.error }, { status: 400 });
@@ -97,7 +97,7 @@ export async function DELETE(
       );
     }
 
-    const result = deleteSubadmin(id, current.name);
+    const result = await deleteSubadmin(id, current.name);
     if (!result.success) {
       return NextResponse.json({ success: false, message: result.error }, { status: 400 });
     }

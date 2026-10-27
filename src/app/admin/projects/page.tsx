@@ -139,71 +139,90 @@ export default function AdminProjectsPage() {
           filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-lg backdrop-blur-md flex flex-col justify-between hover:border-slate-700 transition-all group"
+              className="rounded-2xl border border-slate-800 bg-slate-900/70 overflow-hidden shadow-lg backdrop-blur-md flex flex-col justify-between hover:border-slate-700 transition-all group"
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span
-                    className={`rounded-lg px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                      project.category === "Residential"
-                        ? "bg-[#f36a26]/10 text-[#f36a26] border border-[#f36a26]/20"
-                        : project.category === "Commercial"
-                        ? "bg-[#0070ba]/10 text-[#0070ba] border border-[#0070ba]/20"
-                        : "bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                    }`}
-                  >
-                    {project.category}
-                  </span>
-                  <span className="text-xs font-bold text-amber-400 font-mono flex items-center gap-1">
+                {/* Project Image Preview */}
+                <div className="relative h-44 w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.image || "/images/image 7.png"}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = "/images/image 7.png";
+                    }}
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span
+                      className={`rounded-lg px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md shadow-md ${
+                        project.category === "Residential"
+                          ? "bg-[#f36a26]/90 text-white"
+                          : project.category === "Commercial"
+                          ? "bg-[#0070ba]/90 text-white"
+                          : "bg-purple-600/90 text-white"
+                      }`}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md rounded-lg px-2.5 py-0.5 text-xs font-bold text-amber-400 font-mono flex items-center gap-1 shadow-md">
                     <Zap className="h-3 w-3" />
                     {project.capacity}
-                  </span>
-                </div>
-
-                <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
-                  {project.title}
-                </h3>
-
-                <div className="mt-3 space-y-1.5 text-xs text-slate-400">
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="h-3.5 w-3.5 text-slate-500 shrink-0" />
-                    <span>{project.location}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Building className="h-3.5 w-3.5 text-slate-500 shrink-0" />
-                    <span>{project.client}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5 text-slate-500 shrink-0" />
-                    <span>Commissioned: {project.completionYear}</span>
                   </div>
                 </div>
 
-                {project.impact && (
-                  <p className="mt-3 text-[11px] text-emerald-400/90 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2 leading-relaxed">
-                    🌱 {project.impact}
-                  </p>
-                )}
+                <div className="p-5">
+                  <h3 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
+                    {project.title}
+                  </h3>
+
+                  <div className="mt-3 space-y-1.5 text-xs text-slate-400">
+                    <div className="flex items-center gap-1.5">
+                      <MapPin className="h-3.5 w-3.5 text-slate-500 shrink-0" />
+                      <span>{project.location}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Building className="h-3.5 w-3.5 text-slate-500 shrink-0" />
+                      <span>{project.client}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5 text-slate-500 shrink-0" />
+                      <span>Commissioned: {project.completionYear}</span>
+                    </div>
+                  </div>
+
+                  {project.impact && (
+                    <p className="mt-3 text-[11px] text-emerald-400/90 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2 leading-relaxed">
+                      🌱 {project.impact}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-slate-800 flex items-center justify-end gap-2">
-                <button
-                  onClick={() => {
-                    setProjectToEdit(project);
-                    setIsModalOpen(true);
-                  }}
-                  className="rounded-lg p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                  title="Edit project"
-                >
-                  <Edit2 className="h-4 w-4" />
-                </button>
-                <button
-                  onClick={() => handleDelete(project)}
-                  className="rounded-lg p-1.5 text-slate-400 hover:text-red-400 hover:bg-red-500/20 transition-colors"
-                  title="Delete project"
-                >
-                  <Trash2 className="h-4 w-4" />
-                </button>
+              <div className="px-5 pb-5 pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span className="text-[11px] text-slate-500 font-mono">
+                  {project.status || "Completed"}
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setProjectToEdit(project);
+                      setIsModalOpen(true);
+                    }}
+                    className="rounded-lg p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                    title="Edit project"
+                  >
+                    <Edit2 className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(project)}
+                    className="rounded-lg p-1.5 text-slate-400 hover:text-red-400 hover:bg-red-500/20 transition-colors"
+                    title="Delete project"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
           ))

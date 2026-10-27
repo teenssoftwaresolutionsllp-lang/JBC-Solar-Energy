@@ -78,6 +78,7 @@ export function ProjectsGallery({ initialProjects }: ProjectsGalleryProps) {
                 src={project.image || "/images/image 7.png"}
                 alt={project.title}
                 fill
+                unoptimized={typeof project.image === "string" && (project.image.startsWith("http") || project.image.startsWith("data:"))}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />

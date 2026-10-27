@@ -1,42 +1,6 @@
 {
   "users": [
     {
-      "id": "usr-45eb258a-4d4e-44b6-ad78-9ce5a41b1993",
-      "name": "harish",
-      "email": "harish@gmail.com",
-      "passwordHash": "eb5e8635ce51e9dfbffe4f4b20c69dbc:b54e180f797451a3d58fed479003fdca3c5a454d753b262fb324e4b96d0201c693f6db939765afbd57695f30628a513b884d9b81c92317d27d4e9897ea01f362",
-      "role": "solar_consultant",
-      "permissions": [
-        "leads:read",
-        "leads:write",
-        "analytics:view"
-      ],
-      "status": "active",
-      "phone": "7777777777",
-      "avatar": "H",
-      "lastLogin": null,
-      "createdAt": "2026-10-15T11:04:46.297Z",
-      "updatedAt": "2026-10-15T11:04:46.297Z"
-    },
-    {
-      "id": "usr-2d1a5ffb-df41-474c-9a2d-e899d2e062f8",
-      "name": "Vikram Malhotra",
-      "email": "vikram.m_1792059405394@jbcsolar.com",
-      "passwordHash": "5a12e746e79f42d7b0dc72bd11db786a:079ed53fc2429001b6229e9a265fda6291f6a45fcceff279d7d6b1e0108cde295e6af685d3a721e43c8e4617ae45e4dab79fd0f23ce67e7cdca7ffd4da994618",
-      "role": "solar_consultant",
-      "permissions": [
-        "leads:read",
-        "leads:write",
-        "analytics:view"
-      ],
-      "status": "active",
-      "phone": "+91 9876501234",
-      "avatar": "VM",
-      "lastLogin": null,
-      "createdAt": "2026-10-15T10:16:45.974Z",
-      "updatedAt": "2026-10-15T10:16:45.974Z"
-    },
-    {
       "id": "usr-super-admin-1",
       "name": "Admin User",
       "email": "admin@jbcsolar.com",
@@ -48,34 +12,15 @@
       "status": "active",
       "phone": "+91 9100024222",
       "avatar": "AU",
-      "lastLogin": "2026-10-21T10:18:45.571Z",
-      "createdAt": "2026-09-15T10:16:43.583Z",
-      "updatedAt": "2026-10-15T10:16:43.480Z"
+      "lastLogin": "2026-10-27T05:09:04.792Z",
+      "createdAt": "2026-09-15T15:46:43.583Z",
+      "updatedAt": "2026-10-15T15:46:43.480Z"
     },
     {
-      "id": "usr-subadmin-ops-2",
-      "name": "Rajiv Sharma",
-      "email": "rajiv.s@jbcsolar.com",
-      "passwordHash": "44466d32935c8ff39910676f80fbe371:dfd66604e0db9b7ccdad05b2da12cc2c45e3bd0110c445d535530fcef4b1edadc2fcae6d3cf05059949a83f239453bb1210b786463de5a32861658d1e3f91605",
-      "role": "operations",
-      "permissions": [
-        "leads:read",
-        "leads:write",
-        "projects:manage",
-        "analytics:view"
-      ],
-      "status": "active",
-      "phone": "+91 9849012345",
-      "avatar": "RS",
-      "lastLogin": "2026-10-15T08:16:43.702Z",
-      "createdAt": "2026-09-30T10:16:43.702Z",
-      "updatedAt": "2026-10-15T10:16:43.480Z"
-    },
-    {
-      "id": "usr-subadmin-consultant-3",
-      "name": "Priya Patel",
-      "email": "priya.p@jbcsolar.com",
-      "passwordHash": "61ce2b6d522aefbd015fac5211198b31:0989032cdf79ae6bfbbadd2b777f81693749979f2719c4dae6b71671361af62016c982b72b740bce63019070dac7b4060a931b0f8eb793b200e678b8f3d2e90e",
+      "id": "usr-a1ee57cd-bab8-4a45-a11c-434606c2ab7d",
+      "name": "Harish",
+      "email": "harish@jbcsolar.com",
+      "passwordHash": "36bcafb9648e0dd0c50151a3cb305f70:a66501fbc9fd7516a5fbdcec3c8ab180081ca2e13b79bdc6202e538dbb3975205a1c8d0b3073549ad2680f5cc329253df9d9e7928708eb16a1debaa1b0c69bbf",
       "role": "solar_consultant",
       "permissions": [
         "leads:read",
@@ -83,14 +28,29 @@
         "analytics:view"
       ],
       "status": "active",
-      "phone": "+91 9876543210",
-      "avatar": "PP",
-      "lastLogin": "2026-10-15T05:16:43.843Z",
-      "createdAt": "2026-10-05T10:16:43.843Z",
-      "updatedAt": "2026-10-15T10:16:43.480Z"
+      "phone": "0987654321",
+      "avatar": "H",
+      "lastLogin": "2026-10-27T05:30:27.317Z",
+      "createdAt": "2026-10-27T05:29:58.480Z",
+      "updatedAt": "2026-10-27T05:29:58.480Z"
     }
   ],
   "leads": [
+    {
+      "id": "lead-mvovl44e-doj8",
+      "fullName": "Sravan",
+      "phone": "8125204247",
+      "email": "jbc@gmail.com",
+      "location": "kadapa",
+      "propertyType": "Residential",
+      "interestedIn": "Rooftop Solar",
+      "averageElectricityBill": "Below ₹5,000",
+      "message": "i want the estimation",
+      "status": "contacted",
+      "estimatedKw": null,
+      "createdAt": "2026-10-26T06:28:23.966Z",
+      "updatedAt": "2026-10-26T06:30:32.262Z"
+    },
     {
       "id": "lead-mvj1ou41-tr0k",
       "fullName": "harish",
@@ -101,10 +61,13 @@
       "interestedIn": "Solar EPC",
       "averageElectricityBill": "Below ₹5,000",
       "message": "zxcvbkl;",
-      "status": "pending",
-      "estimatedKw": null,
+      "status": "installed",
+      "estimatedKw": "",
       "createdAt": "2026-10-22T04:32:38.257Z",
-      "updatedAt": "2026-10-22T04:32:38.257Z"
+      "updatedAt": "2026-10-26T08:41:26.954Z",
+      "adminNotes": "",
+      "assignedTo": null,
+      "assignedAdminName": null
     },
     {
       "id": "lead-mv9dwfvy-kl06",
@@ -116,10 +79,10 @@
       "interestedIn": "Rooftop Solar Installation",
       "averageElectricityBill": "₹8,500 / month",
       "message": "Looking for an 8 kW solar rooftop system for private villa.",
-      "status": "contacted",
+      "status": "quoted",
       "estimatedKw": "8 kW",
       "createdAt": "2026-10-15T10:16:46.702Z",
-      "updatedAt": "2026-10-15T10:16:49.355Z",
+      "updatedAt": "2026-10-26T06:24:47.317Z",
       "adminNotes": "Spoke with client. Site survey scheduled for Monday 11 AM."
     },
     {
@@ -132,13 +95,13 @@
       "interestedIn": "Rooftop Solar with Net Metering",
       "averageElectricityBill": "₹6,500 / month",
       "message": "Interested in installing a 7 kW grid-tied solar system for our 3-floor villa to cut summer AC bills.",
-      "status": "pending",
+      "status": "contacted",
       "assignedTo": "usr-subadmin-consultant-3",
       "assignedAdminName": "Priya Patel",
       "adminNotes": "Client requested site survey on Saturday morning.",
       "estimatedKw": "7 kW",
       "createdAt": "2026-10-15T09:16:43.843Z",
-      "updatedAt": "2026-10-15T10:16:43.480Z"
+      "updatedAt": "2026-10-26T09:39:54.799Z"
     },
     {
       "id": "lead-002",
@@ -204,13 +167,13 @@
       "interestedIn": "Solar Carport & Rooftop",
       "averageElectricityBill": "₹3,40,000 / month",
       "message": "Phase 1: 500 kW installation completed and commissioned with smart IoT generation telemetry.",
-      "status": "installed",
+      "status": "rejected",
       "assignedTo": "usr-subadmin-ops-2",
       "assignedAdminName": "Rajiv Sharma",
       "adminNotes": "Commissioning certificate signed. 25-year performance warranty active.",
       "estimatedKw": "500 kW",
       "createdAt": "2026-10-03T10:16:43.843Z",
-      "updatedAt": "2026-10-15T10:16:43.480Z"
+      "updatedAt": "2026-10-26T08:40:32.385Z"
     },
     {
       "id": "lead-006",
@@ -232,20 +195,6 @@
     }
   ],
   "projects": [
-    {
-      "id": "lonestar-advanced-manufacturing",
-      "title": "1.8MW Industrial Microgrid & Solar Farm",
-      "category": "Industrial",
-      "capacity": "1.8 MW",
-      "location": "San Antonio, TX",
-      "client": "Commercial Client",
-      "completionYear": "2024",
-      "status": "Completed",
-      "image": "/images/image 17.png",
-      "description": "High-voltage interconnected manufacturing solar microgrid providing continuous peak shaving and operational resilience.",
-      "impact": "Saves $240,000 annually in demand charges",
-      "createdAt": "2026-09-24T15:46:43.844Z"
-    },
     {
       "id": "oak-ridge-commercial-plaza",
       "title": "Corporate Campus Carport & Solar Canopy",
@@ -315,9 +264,309 @@
       "description": "Architecturally integrated all-black monocrystalline system with full whole-home backup battery bank.",
       "impact": "100% grid independence with net metering surplus",
       "createdAt": "2026-10-01T15:46:43.844Z"
+    },
+    {
+      "id": "lonestar-advanced-manufacturing",
+      "title": "1.8MW Industrial Microgrid & Solar Farm SOLAR PANNEL",
+      "category": "Industrial",
+      "capacity": "1.8 MW",
+      "location": "San Antonio, TX",
+      "client": "Commercial Client",
+      "completionYear": "2024",
+      "status": "Completed",
+      "image": "/images/image 17.png",
+      "description": "High-voltage interconnected manufacturing solar microgrid providing continuous peak shaving and operational resilience.",
+      "impact": "Saves $240,000 annually in demand charges",
+      "createdAt": "2026-09-24T15:46:43.844Z"
+    },
+    {
+      "id": "proj-bcd9d8a7-b176-49ae-a707-fd64d0926d71",
+      "title": "RESIDENCIAL PROJECTS",
+      "category": "Residential",
+      "capacity": "500KW",
+      "location": "HYderbad",
+      "client": "Horizon",
+      "completionYear": "2026",
+      "status": "Completed",
+      "image": "/uploads/projects/proj_1792999002217_WhatsApp_Image_2026-10-10_at_1_0df54d5717d5.jpeg",
+      "description": "Lasting social change begins with awareness, empathy, and small acts practiced\n              every day. This book is our invitation to you — to join The Giving Mindset and\n              transform your world from with",
+      "impact": "Clean renewable power generation.",
+      "createdAt": "2026-10-26T06:48:37.324Z"
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-26f116f1-58a7-4f16-a0b8-ee2e73c997ff",
+      "adminId": "usr-a1ee57cd-bab8-4a45-a11c-434606c2ab7d",
+      "adminName": "Harish",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (harish@jbcsolar.com).",
+      "createdAt": "2026-10-27T05:30:27.348Z"
+    },
+    {
+      "id": "log-dfeb3dae-70af-4c54-86be-1c26fae72533",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-10-27T05:30:16.535Z"
+    },
+    {
+      "id": "log-7139a515-81db-4ec3-8532-30324db0ede0",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for Harish (harish@jbcsolar.com) with role: solar_consultant.",
+      "createdAt": "2026-10-27T05:29:58.480Z"
+    },
+    {
+      "id": "log-a1394b96-66eb-42d9-aa7f-2b71c300f559",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-27T05:09:04.983Z"
+    },
+    {
+      "id": "log-8a39c966-50ed-4e5b-b818-8a5a319791c6",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Rameshwar Rao updated from 'pending' to 'contacted'.",
+      "createdAt": "2026-10-26T09:39:54.800Z"
+    },
+    {
+      "id": "log-aded02dd-8543-4ddc-b261-83f9c293965a",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Rameshwar Rao updated from 'quoted' to 'pending'.",
+      "createdAt": "2026-10-26T09:15:41.997Z"
+    },
+    {
+      "id": "log-c5581939-79b5-40b4-9fde-a219507d0aec",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Rameshwar Rao updated from 'pending' to 'quoted'.",
+      "createdAt": "2026-10-26T09:15:40.199Z"
+    },
+    {
+      "id": "log-775c0cb4-3ee3-4df0-a8b1-e44d41170246",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for Rajiv Patel (rajiv.s@jbcsolar.com).",
+      "createdAt": "2026-10-26T08:43:16.668Z"
+    },
+    {
+      "id": "log-64684588-0679-42d0-a3dd-0f5cbf155117",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for Priya Patel (priya.p@jbcsolar.com).",
+      "createdAt": "2026-10-26T08:43:14.057Z"
+    },
+    {
+      "id": "log-3ae6f2eb-5e84-4b5b-9679-dc6aa5feab37",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for Vikram (vikram.m_1792059405394@jbcsolar.com).",
+      "createdAt": "2026-10-26T08:43:04.198Z"
+    },
+    {
+      "id": "log-97bf805c-2793-4027-940a-fe98135773fe",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for harish (harish@gmail.com).",
+      "createdAt": "2026-10-26T08:43:01.689Z"
+    },
+    {
+      "id": "log-125efa7a-18c2-4ed7-9bdb-868d6ba5bccf",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for punith (punith@jbcsolar.com).",
+      "createdAt": "2026-10-26T08:42:57.422Z"
+    },
+    {
+      "id": "log-cf99a1dc-e69e-401b-883e-bd8dd2546c81",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from harish updated from 'pending' to 'installed'.",
+      "createdAt": "2026-10-26T08:41:26.954Z"
+    },
+    {
+      "id": "log-5b656b90-a4b5-4d98-856c-c3b451c15931",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Cyber Towers Facility Mgmt updated from 'installed' to 'rejected'.",
+      "createdAt": "2026-10-26T08:40:32.385Z"
+    },
+    {
+      "id": "log-3653a5c3-8cfb-4701-8c0a-19d14bf1c902",
+      "adminId": "usr-subadmin-ops-2",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_UPDATED",
+      "details": "Updated account details for Rajiv Patel (rajiv.s@jbcsolar.com).",
+      "createdAt": "2026-10-26T07:29:54.735Z"
+    },
+    {
+      "id": "log-e59f6727-c61f-4ca6-a259-d12c45791d7b",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T07:15:07.830Z"
+    },
+    {
+      "id": "log-9910d0ae-a907-4a1c-807b-124f7ec2f19c",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T07:10:02.658Z"
+    },
+    {
+      "id": "log-69e3ffbf-4aa5-461a-a21e-e0fa3e0a8c51",
+      "adminId": "usr-2d1a5ffb-df41-474c-9a2d-e899d2e062f8",
+      "adminName": "punith",
+      "action": "SUBADMIN_UPDATED",
+      "details": "Updated account details for Vikram (vikram.m_1792059405394@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:44:39.424Z"
+    },
+    {
+      "id": "log-fb7d7c3b-5f5b-4980-8078-42f62e723a2a",
+      "adminId": "usr-subadmin-ops-2",
+      "adminName": "punith",
+      "action": "SUBADMIN_UPDATED",
+      "details": "Updated account details for Rajiv (rajiv.s@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:44:20.989Z"
+    },
+    {
+      "id": "log-9b56702d-c3a6-4138-8779-f6f4737c5ed8",
+      "adminId": "usr-45eb258a-4d4e-44b6-ad78-9ce5a41b1993",
+      "adminName": "punith",
+      "action": "SUBADMIN_UPDATED",
+      "details": "Updated account details for harish (harish@gmail.com).",
+      "createdAt": "2026-10-26T06:43:44.090Z"
+    },
+    {
+      "id": "log-a1eb9c6e-533f-41bc-b84d-af18bf1b7160",
+      "adminId": "usr-cf69b36d-9485-4271-b416-247d2c4fb5b2",
+      "adminName": "punith",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (punith@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:43:27.611Z"
+    },
+    {
+      "id": "log-5a0dd75c-545f-4a9b-81dd-364ff67ef129",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:43:16.223Z"
+    },
+    {
+      "id": "log-8522754e-fb3e-46c2-b2d3-d40b9b6e2f4b",
+      "adminId": "usr-cf69b36d-9485-4271-b416-247d2c4fb5b2",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_UPDATED",
+      "details": "Updated account details for punith (punith@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:43:10.656Z"
+    },
+    {
+      "id": "log-1812d203-bc2c-47b0-b69e-1c8f02ad383e",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:42:44.951Z"
+    },
+    {
+      "id": "log-d9ba95d5-d776-45ad-98b1-5602ea142fc5",
+      "adminId": "usr-cf69b36d-9485-4271-b416-247d2c4fb5b2",
+      "adminName": "punith",
+      "action": "LOGOUT",
+      "details": "Admin logged out (punith@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:42:28.421Z"
+    },
+    {
+      "id": "log-3ab3f986-f1ab-4934-bebc-7e8793e5736d",
+      "adminId": "usr-cf69b36d-9485-4271-b416-247d2c4fb5b2",
+      "adminName": "punith",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (punith@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:41:06.714Z"
+    },
+    {
+      "id": "log-8d9fca44-0abc-43b9-af14-591dd7a5d8af",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:40:56.409Z"
+    },
+    {
+      "id": "log-70dd6453-e3f3-4341-a5d0-21eea979c0ae",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_CREATED",
+      "details": "Created subadmin account for punith (punith@jbcsolar.com) with role: support.",
+      "createdAt": "2026-10-26T06:40:43.287Z"
+    },
+    {
+      "id": "log-206eec20-dcc4-4655-8355-2567fbdf8cdc",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:36:48.897Z"
+    },
+    {
+      "id": "log-95a9c811-db32-4d30-b0e2-c58fb4d7d788",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Sravan updated from 'pending' to 'contacted'.",
+      "createdAt": "2026-10-26T06:30:32.262Z"
+    },
+    {
+      "id": "log-4dbe3bdd-12d2-4c6f-9c57-b6a4b127070b",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:29:24.385Z"
+    },
+    {
+      "id": "log-c953504a-8162-4583-8749-ac727d1e53a7",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Ananya Deshmukh updated from 'pending' to 'quoted'.",
+      "createdAt": "2026-10-26T06:24:47.317Z"
+    },
+    {
+      "id": "log-36890c26-4f30-43a0-8380-4adeb7d4acd3",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "LEAD_STATUS_UPDATED",
+      "details": "Lead from Ananya Deshmukh updated from 'contacted' to 'pending'.",
+      "createdAt": "2026-10-26T06:24:47.301Z"
+    },
+    {
+      "id": "log-69065b83-aca0-40a0-91af-520ae52bb432",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-10-26T06:24:22.065Z"
+    },
     {
       "id": "log-75b8f668-6060-4b62-9558-535699eb6bf2",
       "adminId": "usr-super-admin-1",

@@ -10,7 +10,7 @@ export async function GET() {
       return NextResponse.json({ success: false, message: "Unauthorized." }, { status: 401 });
     }
 
-    const users = getAllAdminUsers();
+    const users = await getAllAdminUsers();
     return NextResponse.json({ success: true, users });
   } catch (error) {
     console.error("Fetch subadmins error:", error);
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     const validRoles: AdminRole[] = ["super_admin", "operations", "solar_consultant", "support"];
     const assignedRole: AdminRole = validRoles.includes(role) ? role : "solar_consultant";
 
-    const result = createSubadmin({
+    const result = await createSubadmin({
       name,
       email,
       password,

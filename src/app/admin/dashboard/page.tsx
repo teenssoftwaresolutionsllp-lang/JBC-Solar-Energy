@@ -184,6 +184,7 @@ export default function AdminDashboardPage() {
             <span>Create Subadmin</span>
           </button>
 
+          {/* Record Lead button commented out
           <button
             onClick={() => setIsNewLeadModalOpen(true)}
             className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#f36a26] to-[#e05514] px-3.5 py-2.5 text-xs font-bold text-white shadow-md hover:brightness-110 active:scale-95 transition-all"
@@ -191,6 +192,7 @@ export default function AdminDashboardPage() {
             <PlusCircle className="h-4 w-4" />
             <span>Record Lead</span>
           </button>
+          */}
 
           <button
             onClick={fetchDashboardData}
@@ -559,11 +561,13 @@ export default function AdminDashboardPage() {
         onSuccess={fetchDashboardData}
       />
 
+      {/* Record Lead modal commented out
       <NewLeadModal
         isOpen={isNewLeadModalOpen}
         onClose={() => setIsNewLeadModalOpen(false)}
         onSuccess={fetchDashboardData}
       />
+      */}
     </div>
   );
 }

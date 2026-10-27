@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     const { passwordHash, ...safeUser } = user;
 
     await createAdminSession(safeUser as SafeAdminUser, !!remember);
-    recordUserLogin(user.id);
+    await recordUserLogin(user.id);
     logAuditEvent(
       user.id,
       user.name,

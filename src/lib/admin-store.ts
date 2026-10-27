@@ -13,7 +13,7 @@ import {
 } from "./admin-types";
 import { projectsData } from "@/data/projects";
 import { getDb } from "@/db";
-import { solarProjects, adminUsers, consultationRequests, auditLogs } from "@/db/schema";
+import { solarProjects, adminUsers } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { ensureDbInitialized } from "@/db/init";
 
@@ -284,7 +284,50 @@ function toSafeUser(user: AdminUserRecord): SafeAdminUser {
 
 // ======================== USER / SUBADMIN OPERATIONS ========================
 
-export function getAllAdminUsers(): SafeAdminUser[] {
+export async function getAllAdminUsers(): Promise<SafeAdminUser[]> {
+  await ensureDbInitialized();
+  const db = getDb();
+  if (db) {
+    try {
+      const rows = await db.select().from(adminUsers);
+      if (rows && rows.length > 0) {
+        const mapped: AdminUserRecord[] = rows.map((u) => {
+          let perms: string[] = [];
+          try {
+            perms = typeof u.permissions === "string" ? JSON.parse(u.permissions) : (u.permissions || []);
+          } catch {
+            perms = [];
+          }
+          return {
+            id: u.id,
+            name: u.name,
+            email: u.email,
+            passwordHash: u.passwordHash,
+            role: u.role as AdminRole,
+            permissions: perms,
+            status: (u.status as "active" | "inactive") || "active",
+            phone: u.phone || "",
+            avatar: u.avatar || "",
+            lastLogin: u.lastLogin ? new Date(u.lastLogin).toISOString() : null,
+            createdAt: u.createdAt ? new Date(u.createdAt).toISOString() : new Date().toISOString(),
+            updatedAt: u.updatedAt ? new Date(u.updatedAt).toISOString() : new Date().toISOString(),
+          };
+        });
+        const store = readStore();
+        store.users = mapped;
+        writeStore(store);
+        return mapped.map(toSafeUser);
+      }
+    } catch (err) {
+      console.warn("PostgreSQL admin users query error, falling back to local file store:", err);
+    }
+  }
+
+  const store = readStore();
+  return store.users.map(toSafeUser);
+}
+
+export function getAllAdminUsersSync(): SafeAdminUser[] {
   const store = readStore();
   return store.users.map(toSafeUser);
 }
@@ -301,7 +344,7 @@ export function getAdminUserById(id: string): SafeAdminUser | null {
   return user ? toSafeUser(user) : null;
 }
 
-export function createSubadmin(data: {
+export async function createSubadmin(data: {
   name: string;
   email: string;
   password: string;
@@ -309,7 +352,8 @@ export function createSubadmin(data: {
   permissions?: string[];
   phone?: string;
   creatorAdminName?: string;
-}): { success: boolean; user?: SafeAdminUser; error?: string } {
+}): Promise<{ success: boolean; user?: SafeAdminUser; error?: string }> {
+  await ensureDbInitialized();
   const store = readStore();
   const emailClean = data.email.trim().toLowerCase();
 
@@ -359,10 +403,33 @@ export function createSubadmin(data: {
   });
 
   writeStore(store);
+
+  const db = getDb();
+  if (db) {
+    try {
+      await db.insert(adminUsers).values({
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email,
+        passwordHash: newUser.passwordHash,
+        role: newUser.role,
+        permissions: JSON.stringify(newUser.permissions),
+        status: newUser.status,
+        phone: newUser.phone || null,
+        avatar: newUser.avatar || null,
+        lastLogin: null,
+        createdAt: new Date(newUser.createdAt),
+        updatedAt: new Date(newUser.updatedAt),
+      });
+    } catch (err) {
+      console.error("DB insert subadmin error:", err);
+    }
+  }
+
   return { success: true, user: toSafeUser(newUser) };
 }
 
-export function updateSubadmin(
+export async function updateSubadmin(
   id: string,
   data: Partial<{
     name: string;
@@ -374,7 +441,8 @@ export function updateSubadmin(
     phone?: string;
   }>,
   actorName = "Admin"
-): { success: boolean; user?: SafeAdminUser; error?: string } {
+): Promise<{ success: boolean; user?: SafeAdminUser; error?: string }> {
+  await ensureDbInitialized();
   const store = readStore();
   const index = store.users.findIndex((u) => u.id === id);
 
@@ -404,7 +472,15 @@ export function updateSubadmin(
     existing.email = data.email.trim().toLowerCase();
   }
 
-  if (data.name) existing.name = data.name.trim();
+  if (data.name) {
+    existing.name = data.name.trim();
+    existing.avatar = existing.name
+      .split(" ")
+      .map((n) => n[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
+  }
   if (data.phone !== undefined) existing.phone = data.phone.trim();
   if (data.role) existing.role = data.role;
   if (data.status) existing.status = data.status;
@@ -427,10 +503,52 @@ export function updateSubadmin(
   });
 
   writeStore(store);
+
+  const db = getDb();
+  if (db) {
+    try {
+      const existingInDb = await db.select().from(adminUsers).where(eq(adminUsers.id, id)).limit(1);
+      if (existingInDb && existingInDb.length > 0) {
+        await db
+          .update(adminUsers)
+          .set({
+            name: existing.name,
+            email: existing.email,
+            role: existing.role,
+            permissions: JSON.stringify(existing.permissions || []),
+            status: existing.status,
+            phone: existing.phone || null,
+            avatar: existing.avatar || null,
+            passwordHash: existing.passwordHash,
+            updatedAt: new Date(existing.updatedAt),
+          })
+          .where(eq(adminUsers.id, id));
+      } else {
+        await db.insert(adminUsers).values({
+          id: existing.id,
+          name: existing.name,
+          email: existing.email,
+          passwordHash: existing.passwordHash,
+          role: existing.role,
+          permissions: JSON.stringify(existing.permissions || []),
+          status: existing.status,
+          phone: existing.phone || null,
+          avatar: existing.avatar || null,
+          lastLogin: existing.lastLogin ? new Date(existing.lastLogin) : null,
+          createdAt: new Date(existing.createdAt),
+          updatedAt: new Date(existing.updatedAt),
+        });
+      }
+    } catch (err) {
+      console.error("DB update subadmin error:", err);
+    }
+  }
+
   return { success: true, user: toSafeUser(existing) };
 }
 
-export function deleteSubadmin(id: string, actorName = "Admin"): { success: boolean; error?: string } {
+export async function deleteSubadmin(id: string, actorName = "Admin"): Promise<{ success: boolean; error?: string }> {
+  await ensureDbInitialized();
   const store = readStore();
   const target = store.users.find((u) => u.id === id);
 
@@ -457,15 +575,37 @@ export function deleteSubadmin(id: string, actorName = "Admin"): { success: bool
   });
 
   writeStore(store);
+
+  const db = getDb();
+  if (db) {
+    try {
+      await db.delete(adminUsers).where(eq(adminUsers.id, id));
+    } catch (err) {
+      console.error("DB delete subadmin error:", err);
+    }
+  }
+
   return { success: true };
 }
 
-export function recordUserLogin(id: string): void {
+export async function recordUserLogin(id: string): Promise<void> {
   const store = readStore();
   const user = store.users.find((u) => u.id === id);
   if (user) {
     user.lastLogin = new Date().toISOString();
     writeStore(store);
+  }
+
+  const db = getDb();
+  if (db) {
+    try {
+      await db
+        .update(adminUsers)
+        .set({ lastLogin: new Date() })
+        .where(eq(adminUsers.id, id));
+    } catch (err) {
+      console.error("DB update lastLogin error:", err);
+    }
   }
 }
 
