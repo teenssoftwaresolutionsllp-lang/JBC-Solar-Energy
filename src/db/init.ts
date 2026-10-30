@@ -76,12 +76,12 @@ export async function ensureDbInitialized() {
       );
     `);
 
-    // 2. Check if solar_projects is empty; if so, seed from admin_store.json
+    // 2. Check if solar_projects is empty; if so, seed from .json
     const countRes = await sql`SELECT count(*) FROM solar_projects`;
     const count = parseInt(countRes[0]?.count || "0", 10);
 
     if (count === 0) {
-      const storeFile = path.join(process.cwd(), ".data", "admin_store.json");
+      const storeFile = path.join(process.cwd(), ".data", ".json");
       if (fs.existsSync(storeFile)) {
         try {
           const store = JSON.parse(fs.readFileSync(storeFile, "utf-8"));
