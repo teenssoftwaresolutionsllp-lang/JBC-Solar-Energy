@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <div className="prose prose-slate max-w-none space-y-6 text-slate-600 leading-relaxed text-sm sm:text-base">
           <p>Last updated: January 2026</p>
           <p>
-            At JBC Solar Energy ("we", "our", or "us"), we are committed to
+            At JBC Solar Energy (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), we are committed to
             protecting your privacy and ensuring your personal information is
             handled responsibly.
           </p>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             2. How We Use Your Information
           </h2>
           <p>
-            We use this information exclusively to assess your property's
+            We use this information exclusively to assess your property&apos;s
             solar potential, contact you regarding your consultation request,
             coordinate site surveys, and provide ongoing solar system monitoring
             support. We do not sell your personal data to third parties.

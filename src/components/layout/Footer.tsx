@@ -155,6 +155,9 @@ export function Footer() {
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms & Conditions
             </Link>
+            {/* <Link href="/admin/login" className="text-amber-400 hover:text-amber-300 font-medium transition-colors flex items-center gap-1">
+            <span>Admin Portal</span>
+           </Link> */}
           </div>
         </div>
       </div>

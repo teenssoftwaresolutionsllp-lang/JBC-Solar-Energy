@@ -30,7 +30,8 @@ export const siteConfig = {
       },
       {
         label: "Other office",
-        address: "Raj Bhavan Road, Somajiguda, Hyderabad, Telangana (500082)",
+        address:
+          "4th Floor, V V VINTAGE RESIDENCY, 6-3-1093 Raj Bhavan Road,Somajiguda, Hyderabad, Telangana 500082",
       },
     ],
     legalName: "JBC RENEWABLE ENERGY INDIA LIMITED",
