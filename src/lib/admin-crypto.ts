@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 const SESSION_SECRET = process.env.ADMIN_SESSION_SECRET || "jbc-solar-super-secret-key-2026-secure-token-99x";
 
@@ -12,15 +13,46 @@ export function hashPassword(password: string): string {
 }
 
 /**
- * Securely verifies a plaintext password against a salt:hash string
+ * Securely verifies a plaintext password against:
+ * 1. bcrypt hashes (e.g. $2a$, $2b$, $2y$, $2x$)
+ * 2. scrypt hashes (salt:derivedKey)
+ * 3. Plaintext fallback (if password was manually edited directly in pgAdmin/database)
  */
 export function verifyPassword(password: string, storedHash: string): boolean {
   try {
-    const parts = storedHash.split(":");
-    if (parts.length !== 2) return false;
-    const [salt, key] = parts;
-    const derivedKey = crypto.scryptSync(password, salt, 64).toString("hex");
-    return crypto.timingSafeEqual(Buffer.from(derivedKey, "hex"), Buffer.from(key, "hex"));
+    if (!storedHash || !password) return false;
+
+    // 1. Check bcrypt hash
+    if (
+      storedHash.startsWith("$2a$") ||
+      storedHash.startsWith("$2b$") ||
+      storedHash.startsWith("$2y$") ||
+      storedHash.startsWith("$2x$")
+    ) {
+      return bcrypt.compareSync(password, storedHash);
+    }
+
+    // 2. Check scrypt hash (salt:derivedKey)
+    if (storedHash.includes(":")) {
+      const parts = storedHash.split(":");
+      if (parts.length === 2) {
+        const [salt, key] = parts;
+        const derivedKey = crypto.scryptSync(password, salt, 64).toString("hex");
+        if (
+          derivedKey.length === key.length &&
+          crypto.timingSafeEqual(Buffer.from(derivedKey, "hex"), Buffer.from(key, "hex"))
+        ) {
+          return true;
+        }
+      }
+    }
+
+    // 3. Fallback: plaintext match (if password was updated as plain text in pgAdmin)
+    if (password === storedHash) {
+      return true;
+    }
+
+    return false;
   } catch {
     return false;
   }

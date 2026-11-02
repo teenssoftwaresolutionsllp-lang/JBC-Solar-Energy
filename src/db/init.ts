@@ -104,7 +104,7 @@ export async function ensureDbInitialized() {
       }
     }
 
-    // 3. Ensure all admin_users from admin_store.json are synced to DB
+    // 3. Ensure all admin_users from admin_store.json are seeded to DB if not present
     const userStoreFile = path.join(process.cwd(), ".data", "admin_store.json");
     if (fs.existsSync(userStoreFile)) {
       try {
@@ -119,22 +119,47 @@ export async function ensureDbInitialized() {
                 ${JSON.stringify(u.permissions || [])}, ${u.status || "active"}, ${u.phone || ""},
                 ${u.avatar || ""}, ${u.lastLogin ? new Date(u.lastLogin) : null},
                 ${new Date(u.createdAt || Date.now())}, ${new Date(u.updatedAt || Date.now())}
-              ) ON CONFLICT (id) DO UPDATE SET
-                name = EXCLUDED.name,
-                email = EXCLUDED.email,
-                role = EXCLUDED.role,
-                permissions = EXCLUDED.permissions,
-                status = EXCLUDED.status,
-                phone = EXCLUDED.phone,
-                avatar = EXCLUDED.avatar,
-                password_hash = EXCLUDED.password_hash,
-                updated_at = EXCLUDED.updated_at;
+              ) ON CONFLICT (id) DO NOTHING;
             `;
           }
         }
       } catch (userSyncErr) {
-        console.warn("Auto-sync admin_users error:", userSyncErr);
+        console.warn("Auto-seed admin_users error:", userSyncErr);
       }
+    }
+
+    // 4. Sync latest DB admin_users back into admin_store.json so manual pgAdmin changes take effect
+    try {
+      const dbUsers = await sql`SELECT * FROM admin_users`;
+      if (dbUsers && dbUsers.length > 0 && fs.existsSync(userStoreFile)) {
+        const store = JSON.parse(fs.readFileSync(userStoreFile, "utf-8"));
+        const mappedUsers = dbUsers.map((u: Record<string, unknown>) => {
+          let perms: string[] = [];
+          try {
+            perms = typeof u.permissions === "string" ? JSON.parse(u.permissions as string) : ((u.permissions as string[]) || []);
+          } catch {
+            perms = [];
+          }
+          return {
+            id: u.id as string,
+            name: u.name as string,
+            email: u.email as string,
+            passwordHash: u.password_hash as string,
+            role: u.role as string,
+            permissions: perms,
+            status: (u.status as string) || "active",
+            phone: (u.phone as string) || "",
+            avatar: (u.avatar as string) || "",
+            lastLogin: u.last_login ? new Date(u.last_login as string | Date).toISOString() : null,
+            createdAt: u.created_at ? new Date(u.created_at as string | Date).toISOString() : new Date().toISOString(),
+            updatedAt: u.updated_at ? new Date(u.updated_at as string | Date).toISOString() : new Date().toISOString(),
+          };
+        });
+        store.users = mappedUsers;
+        fs.writeFileSync(userStoreFile, JSON.stringify(store, null, 2), "utf-8");
+      }
+    } catch (dbSyncErr) {
+      console.warn("Sync from DB admin_users error:", dbSyncErr);
     }
 
     initialized = true;
