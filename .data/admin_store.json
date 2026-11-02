@@ -1,45 +1,10 @@
 {
   "users": [
     {
-      "id": "usr-super-admin-1",
-      "name": "Admin User",
-      "email": "admin@jbcsolar.com",
-      "passwordHash": "b2b59b07718eb54279cebba8424ae74a:1dfe641fdc77377807d53d10e2c5ef84c4e9c7d5be7a4129a6324683595e43b91d781b94c6039b072095e9f82aedc6d6249d6d2fe3a7dd8c8a9a44a1c730bc06",
-      "role": "super_admin",
-      "permissions": [
-        "*"
-      ],
-      "status": "active",
-      "phone": "+91 9100024222",
-      "avatar": "AU",
-      "lastLogin": "2026-10-30T04:56:01.870Z",
-      "createdAt": "2026-09-30T04:56:01.940Z",
-      "updatedAt": "2026-10-30T04:56:01.870Z"
-    },
-    {
-      "id": "usr-subadmin-ops-2",
-      "name": "Rajiv Sharma",
-      "email": "rajiv.s@jbcsolar.com",
-      "passwordHash": "20bedb19f270e17a4a3b5cc8611fdf52:673c38df6bbdab6ff5c20a09b87ba5d98daa19092a3d7b248848a2aec26f0b6ca09f5fb0e670466fc12fd21a3bdb759acc7bdc34083c682db2d436f785e5c07e",
-      "role": "operations",
-      "permissions": [
-        "leads:read",
-        "leads:write",
-        "projects:manage",
-        "analytics:view"
-      ],
-      "status": "active",
-      "phone": "+91 9849012345",
-      "avatar": "RS",
-      "lastLogin": "2026-10-30T02:56:02.003Z",
-      "createdAt": "2026-10-15T04:56:02.003Z",
-      "updatedAt": "2026-10-30T04:56:01.870Z"
-    },
-    {
-      "id": "usr-subadmin-consultant-3",
-      "name": "Priya Patel",
-      "email": "priya.p@jbcsolar.com",
-      "passwordHash": "8ede7affc8fdafbd39dd189d5ae7b4f3:8b5bf56df704e0f39b904add1acefa46aa2b8163439c4315931d65d8e205ab44f34e1c713d63a376644bf1de3ae9fa5bed444f6ea1663f5e15db42125b81de00",
+      "id": "usr-a1ee57cd-bab8-4a45-a11c-434606c2ab7d",
+      "name": "Harish",
+      "email": "harish@jbcsolar.com",
+      "passwordHash": "36bcafb9648e0dd0c50151a3cb305f70:a66501fbc9fd7516a5fbdcec3c8ab180081ca2e13b79bdc6202e538dbb3975205a1c8d0b3073549ad2680f5cc329253df9d9e7928708eb16a1debaa1b0c69bbf",
       "role": "solar_consultant",
       "permissions": [
         "leads:read",
@@ -47,11 +12,45 @@
         "analytics:view"
       ],
       "status": "active",
-      "phone": "+91 9876543210",
-      "avatar": "PP",
-      "lastLogin": "2026-10-29T23:56:02.064Z",
-      "createdAt": "2026-10-20T04:56:02.064Z",
-      "updatedAt": "2026-10-30T04:56:01.870Z"
+      "phone": "0987654321",
+      "avatar": "H",
+      "lastLogin": "2026-10-27T05:30:27.317Z",
+      "createdAt": "2026-10-27T05:29:58.480Z",
+      "updatedAt": "2026-10-27T05:29:58.480Z"
+    },
+    {
+      "id": "usr-bd6ff31f-9384-490b-9672-25e6b39c869c",
+      "name": "vasanth",
+      "email": "vasanth@jbcsolar.com",
+      "passwordHash": "f1cd5318652f445df7722c060407a500:5afbbec10d5e3032bc994bd529cfe3638d253e419652734f974c1f735004e239f28f0a44413e1dbb2f7cacde5408d44259b5c1c5afe58335c54429d88583b281",
+      "role": "solar_consultant",
+      "permissions": [
+        "leads:read",
+        "analytics:view",
+        "leads:write"
+      ],
+      "status": "active",
+      "phone": "888888888",
+      "avatar": "V",
+      "lastLogin": "2026-10-29T06:05:06.718Z",
+      "createdAt": "2026-10-29T06:04:49.344Z",
+      "updatedAt": "2026-10-29T06:04:49.344Z"
+    },
+    {
+      "id": "usr-super-admin-1",
+      "name": "Admin User",
+      "email": "admin@jbcsolar.com",
+      "passwordHash": "48ae7934dd8cc8ab1c3e351a7178d54c:22852e94df0a10589f170f59a881b526b819adbf6e5f29f6593186748267dddf6aa20a2266c3640eb6bc08376c65f366022256d96e2abf1cdef17a7b4f3d05b2",
+      "role": "super_admin",
+      "permissions": [
+        "*"
+      ],
+      "status": "active",
+      "phone": "+91 9100024222",
+      "avatar": "AU",
+      "lastLogin": "2026-10-30T04:46:00.682Z",
+      "createdAt": "2026-09-15T15:46:43.583Z",
+      "updatedAt": "2026-10-15T15:46:43.480Z"
     }
   ],
   "leads": [
@@ -166,48 +165,6 @@
   ],
   "projects": [
     {
-      "id": "horizon-logistics",
-      "title": "500kW Rooftop Array for Horizon Logistics Center",
-      "category": "Commercial",
-      "capacity": "500 kW",
-      "location": "Austin, TX",
-      "client": "Commercial Client",
-      "completionYear": "2025",
-      "status": "Completed",
-      "image": "/images/image 7.png",
-      "description": " Make the most of your available roof space with a professionally designed solar system.",
-      "impact": "Eliminates 460 metric tons of CO2 annually",
-      "createdAt": "2026-10-23T04:56:02.064Z"
-    },
-    {
-      "id": "austin-hills-residence",
-      "title": "Hill Country Net-Zero Residential Sanctuary",
-      "category": "Residential",
-      "capacity": "14.8 kW + 20kWh Battery",
-      "location": "Westlake Hills, TX",
-      "client": "Private Homeowner",
-      "completionYear": "2025",
-      "status": "Completed",
-      "image": "/images/image 6.png",
-      "description": "Architecturally integrated all-black monocrystalline system with full whole-home backup battery bank.",
-      "impact": "100% grid independence with net metering surplus",
-      "createdAt": "2026-10-16T04:56:02.064Z"
-    },
-    {
-      "id": "lonestar-advanced-manufacturing",
-      "title": "1.8MW Industrial Microgrid & Solar Farm",
-      "category": "Industrial",
-      "capacity": "1.8 MW",
-      "location": "San Antonio, TX",
-      "client": "Commercial Client",
-      "completionYear": "2024",
-      "status": "Completed",
-      "image": "/images/image 17.png",
-      "description": "High-voltage interconnected manufacturing solar microgrid providing continuous peak shaving and operational resilience.",
-      "impact": "Saves $240,000 annually in demand charges",
-      "createdAt": "2026-10-09T04:56:02.064Z"
-    },
-    {
       "id": "oak-ridge-commercial-plaza",
       "title": "Corporate Campus Carport & Solar Canopy",
       "category": "Commercial",
@@ -219,7 +176,7 @@
       "image": "/images/image 8.png",
       "description": "Dual-purpose solar carport covering 180 parking bays with 12 integrated Level 2 EV charging stations.",
       "impact": "Powers 65% of campus HVAC and office computing",
-      "createdAt": "2026-10-02T04:56:02.064Z"
+      "createdAt": "2026-09-17T15:46:43.844Z"
     },
     {
       "id": "travis-county-agri-solar",
@@ -233,7 +190,7 @@
       "image": "/images/image 9.png",
       "description": "Elevated racking structure enabling grazing and shade-tolerant crop farming underneath solar arrays.",
       "impact": "Dual revenue stream with clean irrigation power",
-      "createdAt": "2026-09-25T04:56:02.064Z"
+      "createdAt": "2026-09-10T15:46:43.844Z"
     },
     {
       "id": "sol-vista-subdivision",
@@ -247,10 +204,74 @@
       "image": "/images/image 11.png",
       "description": "Turnkey residential rooftop deployment for a master-planned net-zero neighborhood.",
       "impact": "Clean energy for 24 high-efficiency family homes",
-      "createdAt": "2026-09-18T04:56:02.064Z"
+      "createdAt": "2026-09-03T15:46:43.844Z"
+    },
+    {
+      "id": "horizon-logistics",
+      "title": "500kW Rooftop Array for Horizon Logistics Centerr",
+      "category": "Residential",
+      "capacity": "500 kW",
+      "location": "Austin, TX",
+      "client": "Commercial Client",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 7.png",
+      "description": "Make the most of your available roof space with a professionally designed solar system.",
+      "impact": "Eliminates 460 metric tons of CO2 annually",
+      "createdAt": "2026-10-08T15:46:43.844Z"
+    },
+    {
+      "id": "austin-hills-residence",
+      "title": "Hill Country Net-Zero Residential Sanctuary",
+      "category": "Residential",
+      "capacity": "14.8 kW + 20kWh Battery",
+      "location": "Westlake Hills, TX",
+      "client": "Private Homeowner",
+      "completionYear": "2025",
+      "status": "Completed",
+      "image": "/images/image 6.png",
+      "description": "Architecturally integrated all-black monocrystalline system with full whole-home backup battery bank.",
+      "impact": "100% grid independence with net metering surplus",
+      "createdAt": "2026-10-01T15:46:43.844Z"
+    },
+    {
+      "id": "lonestar-advanced-manufacturing",
+      "title": "1.8MW Industrial Microgrid & Solar Farm SOLAR PANNEL",
+      "category": "Industrial",
+      "capacity": "1.8 MW",
+      "location": "San Antonio, TX",
+      "client": "Commercial Client",
+      "completionYear": "2024",
+      "status": "Completed",
+      "image": "/images/image 17.png",
+      "description": "High-voltage interconnected manufacturing solar microgrid providing continuous peak shaving and operational resilience.",
+      "impact": "Saves $240,000 annually in demand charges",
+      "createdAt": "2026-09-24T15:46:43.844Z"
+    },
+    {
+      "id": "proj-bcd9d8a7-b176-49ae-a707-fd64d0926d71",
+      "title": "RESIDENCIAL PROJECTS",
+      "category": "Residential",
+      "capacity": "500KW",
+      "location": "HYderbad",
+      "client": "Horizon",
+      "completionYear": "2026",
+      "status": "Completed",
+      "image": "/uploads/projects/proj_1792999002217_WhatsApp_Image_2026-10-10_at_1_0df54d5717d5.jpeg",
+      "description": "Lasting social change begins with awareness, empathy, and small acts practiced\n              every day. This book is our invitation to you — to join The Giving Mindset and\n              transform your world from with",
+      "impact": "Clean renewable power generation.",
+      "createdAt": "2026-10-26T06:48:37.324Z"
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-eeb1b092-b8ee-4905-9805-9f7b47d96da8",
+      "adminId": "usr-subadmin-ops-2",
+      "adminName": "Rajiv Sharma",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (rajiv.s@jbcsolar.com).",
+      "createdAt": "2026-11-02T09:04:14.692Z"
+    },
     {
       "id": "log-001",
       "adminId": "usr-super-admin-1",

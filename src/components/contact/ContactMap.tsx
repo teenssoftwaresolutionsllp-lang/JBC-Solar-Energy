@@ -1,8 +1,9 @@
 import { siteConfig } from "@/data/site";
 
-const companyAddress = siteConfig.contact.locations[0].address;
+const companyAddress = siteConfig.contact.locations[1].address;
 const encodedAddress = encodeURIComponent(companyAddress);
 const mapUrl = `https://maps.google.com/maps?q=${encodedAddress}&output=embed`;
+const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
 export function ContactMap() {
   return (
@@ -20,11 +21,11 @@ export function ContactMap() {
               id="contact-map-title"
               className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl"
             >
-              JBC Solar Energy - Bhinmal
+              JBC Solar Energy - Hyderabad
             </h2>
           </div>
           <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`}
+            href={directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold text-[#f36a26] transition-colors hover:text-[#e05514]"
@@ -32,14 +33,22 @@ export function ContactMap() {
             Open in Google Maps
           </a>
         </div>
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
           <iframe
-            title="Google Maps location for JBC Solar Energy in Bhinmal"
+            title="Google Maps location for JBC Solar Energy in Hyderabad"
             src={mapUrl}
-            className="h-[320px] w-full sm:h-[420px]"
+            aria-hidden="true"
+            className="pointer-events-none h-[320px] w-full sm:h-[420px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
+          />
+          <a
+            href={directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open JBC Solar Energy's Hyderabad location in Google Maps"
+            className="absolute inset-0"
           />
         </div>
       </div>
