@@ -1,46 +1,10 @@
 {
   "users": [
     {
-      "id": "usr-a1ee57cd-bab8-4a45-a11c-434606c2ab7d",
-      "name": "Harish",
-      "email": "harish@jbcsolar.com",
-      "passwordHash": "36bcafb9648e0dd0c50151a3cb305f70:a66501fbc9fd7516a5fbdcec3c8ab180081ca2e13b79bdc6202e538dbb3975205a1c8d0b3073549ad2680f5cc329253df9d9e7928708eb16a1debaa1b0c69bbf",
-      "role": "solar_consultant",
-      "permissions": [
-        "leads:read",
-        "leads:write",
-        "analytics:view"
-      ],
-      "status": "active",
-      "phone": "0987654321",
-      "avatar": "H",
-      "lastLogin": "2026-10-27T05:30:27.317Z",
-      "createdAt": "2026-10-27T05:29:58.480Z",
-      "updatedAt": "2026-10-27T05:29:58.480Z"
-    },
-    {
-      "id": "usr-bd6ff31f-9384-490b-9672-25e6b39c869c",
-      "name": "vasanth",
-      "email": "vasanth@jbcsolar.com",
-      "passwordHash": "f1cd5318652f445df7722c060407a500:5afbbec10d5e3032bc994bd529cfe3638d253e419652734f974c1f735004e239f28f0a44413e1dbb2f7cacde5408d44259b5c1c5afe58335c54429d88583b281",
-      "role": "solar_consultant",
-      "permissions": [
-        "leads:read",
-        "analytics:view",
-        "leads:write"
-      ],
-      "status": "active",
-      "phone": "888888888",
-      "avatar": "V",
-      "lastLogin": "2026-10-29T06:05:06.718Z",
-      "createdAt": "2026-10-29T06:04:49.344Z",
-      "updatedAt": "2026-10-29T06:04:49.344Z"
-    },
-    {
       "id": "usr-super-admin-1",
       "name": "Admin User",
       "email": "admin@jbcsolar.com",
-      "passwordHash": "48ae7934dd8cc8ab1c3e351a7178d54c:22852e94df0a10589f170f59a881b526b819adbf6e5f29f6593186748267dddf6aa20a2266c3640eb6bc08376c65f366022256d96e2abf1cdef17a7b4f3d05b2",
+      "passwordHash": "$2a$12$gCiheQ15T.eao29DMFZbkuNLQ9eZ4uLSCKzuH27oU3WDIwQQ9s8ve",
       "role": "super_admin",
       "permissions": [
         "*"
@@ -48,7 +12,7 @@
       "status": "active",
       "phone": "+91 9100024222",
       "avatar": "AU",
-      "lastLogin": "2026-10-30T04:46:00.682Z",
+      "lastLogin": "2026-11-02T11:31:31.327Z",
       "createdAt": "2026-09-15T15:46:43.583Z",
       "updatedAt": "2026-10-15T15:46:43.480Z"
     }
@@ -264,6 +228,118 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-5880a41e-5179-4ff1-a191-eebfc106f5c6",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:31:32.121Z"
+    },
+    {
+      "id": "log-581b6a1b-2433-4fe3-8348-8508c1967135",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:31:08.094Z"
+    },
+    {
+      "id": "log-4483b875-a79a-4d5e-a46d-503f46a094af",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:30:15.600Z"
+    },
+    {
+      "id": "log-448485c2-5bbe-41ae-b100-0d806a7fd359",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:30:03.062Z"
+    },
+    {
+      "id": "log-1729dbd5-32e6-45b4-9732-d6908d65f9b9",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:29:53.829Z"
+    },
+    {
+      "id": "log-25578912-a7c6-4102-bcfe-d3abffb99e5a",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:29:31.420Z"
+    },
+    {
+      "id": "log-1b3a1f4c-3a92-4182-80e9-2ec310d371e6",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T11:18:17.090Z"
+    },
+    {
+      "id": "log-6a4413f7-ebcc-4c50-953f-eb5fef4e6bde",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:33:24.820Z"
+    },
+    {
+      "id": "log-fc416699-d145-423a-85cc-ca5f0a288501",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:33:24.778Z"
+    },
+    {
+      "id": "log-f805a62c-ebb7-4ba8-b81f-803e8cf24312",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for Harish (harish@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:32:31.131Z"
+    },
+    {
+      "id": "log-3b56a6fb-2195-4cb1-baf0-d13d5e56754f",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for vasanth (vasanth@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:32:27.675Z"
+    },
+    {
+      "id": "log-5bd3bc47-c706-4419-954b-53da0da18a7e",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for Harish (harish@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:29:03.513Z"
+    },
+    {
+      "id": "log-276141fe-673a-4a28-9b98-f10f293aa38f",
+      "adminId": "current",
+      "adminName": "Admin User",
+      "action": "SUBADMIN_DELETED",
+      "details": "Deleted subadmin account for vasanth (vasanth@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:28:58.430Z"
+    },
+    {
+      "id": "log-1d341941-69be-4d42-90b5-57cd74a4d293",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-02T10:28:33.023Z"
+    },
     {
       "id": "log-eeb1b092-b8ee-4905-9805-9f7b47d96da8",
       "adminId": "usr-subadmin-ops-2",

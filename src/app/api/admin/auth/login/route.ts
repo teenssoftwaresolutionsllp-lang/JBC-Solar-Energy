@@ -16,7 +16,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const user = getAdminUserByEmailWithPassword(email);
+    const user = await getAdminUserByEmailWithPassword(email);
     if (!user) {
       return NextResponse.json(
         { success: false, message: "Invalid email or password." },

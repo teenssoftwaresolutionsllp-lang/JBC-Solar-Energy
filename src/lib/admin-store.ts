@@ -332,9 +332,54 @@ export function getAllAdminUsersSync(): SafeAdminUser[] {
   return store.users.map(toSafeUser);
 }
 
-export function getAdminUserByEmailWithPassword(email: string): AdminUserRecord | null {
-  const store = readStore();
+export async function getAdminUserByEmailWithPassword(email: string): Promise<AdminUserRecord | null> {
   const lower = email.trim().toLowerCase();
+
+  await ensureDbInitialized();
+  const db = getDb();
+  if (db) {
+    try {
+      const rows = await db.select().from(adminUsers);
+      const matched = rows.find((u) => u.email.toLowerCase() === lower);
+      if (matched) {
+        let perms: string[] = [];
+        try {
+          perms = typeof matched.permissions === "string" ? JSON.parse(matched.permissions) : (matched.permissions || []);
+        } catch {
+          perms = [];
+        }
+        const record: AdminUserRecord = {
+          id: matched.id,
+          name: matched.name,
+          email: matched.email,
+          passwordHash: matched.passwordHash,
+          role: matched.role as AdminRole,
+          permissions: perms,
+          status: (matched.status as "active" | "inactive") || "active",
+          phone: matched.phone || "",
+          avatar: matched.avatar || "",
+          lastLogin: matched.lastLogin ? new Date(matched.lastLogin).toISOString() : null,
+          createdAt: matched.createdAt ? new Date(matched.createdAt).toISOString() : new Date().toISOString(),
+          updatedAt: matched.updatedAt ? new Date(matched.updatedAt).toISOString() : new Date().toISOString(),
+        };
+
+        const store = readStore();
+        const idx = store.users.findIndex((u) => u.id === record.id || u.email.toLowerCase() === lower);
+        if (idx !== -1) {
+          store.users[idx] = record;
+        } else {
+          store.users.unshift(record);
+        }
+        writeStore(store);
+
+        return record;
+      }
+    } catch (err) {
+      console.warn("PostgreSQL user query error, falling back to local file store:", err);
+    }
+  }
+
+  const store = readStore();
   return store.users.find((u) => u.email.toLowerCase() === lower) || null;
 }
 
