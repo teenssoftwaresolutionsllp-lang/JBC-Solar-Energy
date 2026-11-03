@@ -156,7 +156,11 @@ export async function ensureDbInitialized() {
           };
         });
         store.users = mappedUsers;
-        fs.writeFileSync(userStoreFile, JSON.stringify(store, null, 2), "utf-8");
+        try {
+          fs.writeFileSync(userStoreFile, JSON.stringify(store, null, 2), "utf-8");
+        } catch {
+          // Read-only filesystem in Vercel
+        }
       }
     } catch (dbSyncErr) {
       console.warn("Sync from DB admin_users error:", dbSyncErr);

@@ -12,7 +12,7 @@
       "status": "active",
       "phone": "+91 9100024222",
       "avatar": "AU",
-      "lastLogin": "2026-11-03T04:04:55.116Z",
+      "lastLogin": "2026-11-03T04:27:49.319Z",
       "createdAt": "2026-09-15T15:46:43.583Z",
       "updatedAt": "2026-10-15T15:46:43.480Z"
     }
@@ -228,6 +228,38 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-e17382a5-eb1b-49da-9a35-127f5c95ac60",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-03T04:27:49.960Z"
+    },
+    {
+      "id": "log-daa44fa0-d577-48b2-941c-f0ea344cfec6",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGOUT",
+      "details": "Admin logged out (admin@jbcsolar.com).",
+      "createdAt": "2026-11-03T04:27:30.240Z"
+    },
+    {
+      "id": "log-d37d31d1-f8e6-421b-8484-cd4d6a05f323",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-03T04:27:19.788Z"
+    },
+    {
+      "id": "log-ee51838d-63a8-42b2-8ab5-ade736f30d1b",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-03T04:10:47.808Z"
+    },
     {
       "id": "log-88daaa90-d580-4534-8226-944c1418748c",
       "adminId": "usr-super-admin-1",

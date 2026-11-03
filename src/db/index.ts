@@ -10,11 +10,13 @@ export function getRawSql() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) return null;
   try {
+    const isNeon = connectionString.includes("neon.tech") || connectionString.includes("sslmode=require");
     sqlClient = postgres(connectionString, {
       max: 10,
       idle_timeout: 20,
       connect_timeout: 10,
       prepare: false,
+      ssl: isNeon ? "require" : undefined,
     });
     return sqlClient;
   } catch (err) {

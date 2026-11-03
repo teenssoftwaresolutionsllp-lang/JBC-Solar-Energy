@@ -27,9 +27,15 @@ interface StoreData {
 const DATA_DIR = path.join(process.cwd(), ".data");
 const STORE_FILE = path.join(DATA_DIR, "admin_store.json");
 
+let memoryStoreCache: StoreData | null = null;
+
 function ensureDirectoryExists() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+  } catch {
+    // Read-only filesystem in serverless environments like Vercel
   }
 }
 
@@ -254,26 +260,42 @@ function getInitialStore(): StoreData {
 }
 
 function readStore(): StoreData {
-  ensureDirectoryExists();
+  if (memoryStoreCache) {
+    return memoryStoreCache;
+  }
   try {
+    ensureDirectoryExists();
     if (!fs.existsSync(STORE_FILE)) {
       const initial = getInitialStore();
-      fs.writeFileSync(STORE_FILE, JSON.stringify(initial, null, 2), "utf-8");
+      try {
+        fs.writeFileSync(STORE_FILE, JSON.stringify(initial, null, 2), "utf-8");
+      } catch {
+        // Read-only filesystem in Vercel
+      }
+      memoryStoreCache = initial;
       return initial;
     }
     const content = fs.readFileSync(STORE_FILE, "utf-8");
-    return JSON.parse(content) as StoreData;
+    const parsed = JSON.parse(content) as StoreData;
+    memoryStoreCache = parsed;
+    return parsed;
   } catch (error) {
-    console.error("Error reading admin store, resetting to initial:", error);
+    console.warn("Could not read local store file, falling back to initial in-memory:", error);
     const initial = getInitialStore();
-    fs.writeFileSync(STORE_FILE, JSON.stringify(initial, null, 2), "utf-8");
+    memoryStoreCache = initial;
     return initial;
   }
 }
 
 function writeStore(data: StoreData): void {
-  ensureDirectoryExists();
-  fs.writeFileSync(STORE_FILE, JSON.stringify(data, null, 2), "utf-8");
+  memoryStoreCache = data;
+  try {
+    ensureDirectoryExists();
+    fs.writeFileSync(STORE_FILE, JSON.stringify(data, null, 2), "utf-8");
+  } catch {
+    // On Vercel / serverless read-only filesystem, file writes fail silently.
+    // memoryStoreCache keeps the state in memory, while PostgreSQL stores persistent data.
+  }
 }
 
 function toSafeUser(user: AdminUserRecord): SafeAdminUser {
