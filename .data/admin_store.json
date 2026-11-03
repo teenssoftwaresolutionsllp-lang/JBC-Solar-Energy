@@ -12,7 +12,7 @@
       "status": "active",
       "phone": "+91 9100024222",
       "avatar": "AU",
-      "lastLogin": "2026-11-02T11:31:31.327Z",
+      "lastLogin": "2026-11-03T04:04:55.116Z",
       "createdAt": "2026-09-15T15:46:43.583Z",
       "updatedAt": "2026-10-15T15:46:43.480Z"
     }
@@ -228,6 +228,14 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-88daaa90-d580-4534-8226-944c1418748c",
+      "adminId": "usr-super-admin-1",
+      "adminName": "Admin User",
+      "action": "LOGIN_SUCCESS",
+      "details": "Admin logged in successfully (admin@jbcsolar.com).",
+      "createdAt": "2026-11-03T04:04:55.653Z"
+    },
     {
       "id": "log-5880a41e-5179-4ff1-a191-eebfc106f5c6",
       "adminId": "usr-super-admin-1",
