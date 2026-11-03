@@ -39,7 +39,7 @@ export const siteConfig = {
   },
   social: {
     linkedin: "https://linkedin.com",
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/jbcsolarenergypvt.ltd",
     facebook: "https://facebook.com",
     twitter: "https://x.com",
   },
