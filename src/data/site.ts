@@ -21,7 +21,7 @@ export const siteConfig = {
   contact: {
     phone: "+91 9100024222",
     phoneClean: "9100024222",
-    whatsapp: "9100024222",
+    whatsapp: "919100024222",
     locations: [
       {
         label: "Company address",
