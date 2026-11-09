@@ -136,6 +136,10 @@ export function Footer() {
                   WhatsApp: {siteConfig.contact.phone}
                 </a>
               </p>
+              <p>
+                <span className="font-semibold text-white">Open hours:</span>{" "}
+                {siteConfig.contact.openingHours}
+              </p>
             </div>
           </div>
         </div>

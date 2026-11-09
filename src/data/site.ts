@@ -25,17 +25,17 @@ export const siteConfig = {
     locations: [
       {
         label: "Company address",
-        address:
-          "215, Chaudhriyo Ka Bas, Ward No 1, Main Road Kora, Bhinmal, Jalor, Rajasthan, 343029, India",
+        address: "Bhinmal, Jalore, Rajasthan, 343029 ,India",
       },
       {
         label: "Other office",
         address:
-          "4th Floor, V V VINTAGE RESIDENCY, 6-3-1093 Raj Bhavan Road,Somajiguda, Hyderabad, Telangana 500082",
+          "15-8-3, G-6 , Tolaram Building, Near Siddiamber Bazar Masjid Hyderabad , Telangana 500012",
       },
     ],
     legalName: "JBC RENEWABLE ENERGY INDIA LIMITED",
     cin: "U35105RJ2026PLC111882",
+    openingHours: "Monday to Saturday: 9:00 AM - 6:00 PM | Sunday: Closed",
   },
   social: {
     linkedin: "https://linkedin.com",

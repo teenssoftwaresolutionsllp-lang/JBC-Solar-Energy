@@ -4,7 +4,7 @@
       "id": "usr-super-admin-1",
       "name": "Admin User",
       "email": "admin@jbcsolar.com",
-      "passwordHash": "$2a$12$gCiheQ15T.eao29DMFZbkuNLQ9eZ4uLSCKzuH27oU3WDIwQQ9s8ve",
+      "passwordHash": "$2a$12$EpyR3DiSjHIgfSgcywQaJ.GObBTiAO1UgoxwJ72.T87ElZo5k6P/i",
       "role": "super_admin",
       "permissions": [
         "*"
@@ -12,9 +12,9 @@
       "status": "active",
       "phone": "+91 9100024222",
       "avatar": "AU",
-      "lastLogin": "2026-11-03T04:27:49.319Z",
-      "createdAt": "2026-09-15T15:46:43.583Z",
-      "updatedAt": "2026-10-15T15:46:43.480Z"
+      "lastLogin": "2026-11-04T14:17:09.838Z",
+      "createdAt": "2026-09-15T10:16:43.583Z",
+      "updatedAt": "2026-10-15T10:16:43.480Z"
     }
   ],
   "leads": [

@@ -2,7 +2,8 @@ import { siteConfig } from "@/data/site";
 
 const companyAddress = siteConfig.contact.locations[1].address;
 const encodedAddress = encodeURIComponent(companyAddress);
-const mapUrl = `https://maps.google.com/maps?q=${encodedAddress}&output=embed`;
+const mapUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.7483186457694!2d78.47002319678958!3d17.3758396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9780286ea75f%3A0x3607f206bde44dd0!2sRavi%20embroidery!5e0!3m2!1sen!2sin!4v1794200000764!5m2!1sen!2sin";
 const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
 
 export function ContactMap() {
